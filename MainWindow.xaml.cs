@@ -23,16 +23,13 @@ namespace Calculadora
         public MainWindow()
         {
             InitializeComponent();
-            char operador;
-            double num1,num2;
         }
 
         private void BtnN0_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                double valor = 0;
-                TxtBoxResul.Text += valor.ToString();
+                HandleNumbers("0");
             }
             catch (Exception)
             {
@@ -45,8 +42,7 @@ namespace Calculadora
         {
             try
             {
-                double valor = 1;
-                TxtBoxResul.Text += valor.ToString();
+                HandleNumbers("1");
             }
             catch (Exception)
             {
@@ -59,8 +55,7 @@ namespace Calculadora
         {
             try
             {
-                double valor = 2;
-                TxtBoxResul.Text += valor.ToString();
+                HandleNumbers("2");
             }
             catch (Exception)
             {
@@ -73,8 +68,7 @@ namespace Calculadora
         {
             try
             {
-                double valor = 3;
-                TxtBoxResul.Text += valor.ToString();
+                HandleNumbers("3");
             }
             catch (Exception)
             {
@@ -87,8 +81,7 @@ namespace Calculadora
         {
             try
             {
-                double valor = 4;
-                TxtBoxResul.Text += valor.ToString();
+                HandleNumbers("4");
             }
             catch (Exception)
             {
@@ -101,8 +94,7 @@ namespace Calculadora
         {
             try
             {
-                double valor = 5;
-                TxtBoxResul.Text += valor.ToString();
+                HandleNumbers("5");
             }
             catch (Exception)
             {
@@ -115,8 +107,7 @@ namespace Calculadora
         {
             try
             {
-                double valor = 6;
-                TxtBoxResul.Text += valor.ToString();
+                HandleNumbers("6");
             }
             catch (Exception)
             {
@@ -129,8 +120,7 @@ namespace Calculadora
         {
             try
             {
-                double valor = 7;
-                TxtBoxResul.Text += valor.ToString();
+                HandleNumbers("7");
             }
             catch (Exception)
             {
@@ -143,8 +133,7 @@ namespace Calculadora
         {
             try
             {
-                double valor = 8;
-                TxtBoxResul.Text += valor.ToString();
+                HandleNumbers("8");
             }
             catch (Exception)
             {
@@ -211,9 +200,7 @@ namespace Calculadora
         {
             try
             {
-                operador = '+';
-                num1 = double.Parse(TxtBoxResul.Text);
-                TxtBoxResul.Text = "";
+                
             }
             catch (Exception)
             {
@@ -226,18 +213,23 @@ namespace Calculadora
         {
             try
             {
-                double result = 0;
-                switch (operador)
-                {
-                    case '+':
-                        result = suma.ToString(); 
-                        break;
-                }
+                
             }
             catch (Exception)
             {
 
                 throw (new Exception("ERROR"));
+            }
+        }
+        private void HandleNumbers(string value)
+        {
+            if (String.IsNullOrEmpty(TxtBoxResul.Text))
+            {
+                TxtBoxResul.Text = value;
+            }
+            else
+            {
+                TxtBoxResul.Text += value;
             }
         }
     }
