@@ -232,5 +232,22 @@ namespace Calculadora
                 TxtBoxResul.Text += value;
             }
         }
+        private bool IsOperator(string PosOperador)
+        {
+            if (PosOperador == "+" || PosOperador == "-" || PosOperador == "*" || PosOperador == "/")
+            {
+                return true;
+            }
+            return false;
+            return PosOperador == "+" || PosOperador == "-" || PosOperador == "*" || PosOperador == "/";
+        }
+        private void HandleOperators(string value)
+        {
+            if (!String.IsNullOrEmpty(TxtBoxResul.Text))
+            {
+                TxtBoxResul.Text += value;
+            }
+        }
+
     }
 }
