@@ -171,9 +171,17 @@ namespace Calculadora
 
         private void BtnBorrarN_Click(object sender, RoutedEventArgs e)
         {
+            
             try
             {
-                TxtBoxResul.Text = "";
+                if (TxtBoxResul.Text.Length <= 1)
+                {
+                    TxtBoxResul.Text = "";
+                }
+                else
+                {
+                    TxtBoxResul.Text = TxtBoxResul.Text.Remove(TxtBoxResul.Text.Length - 1);
+                }
             }
             catch (Exception)
             {
@@ -194,7 +202,6 @@ namespace Calculadora
                 throw (new Exception("ERROR"));
             }
         }
-
         private void BtnSuma_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -243,6 +250,18 @@ namespace Calculadora
                 throw (new Exception("ERROR"));
             }
         }
+        private void BtnPorcent_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                HandleOperators("%");
+            }
+            catch (Exception)
+            {
+
+                throw (new Exception("ERROR"));
+            }
+        }
         private void BtnResul_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -268,11 +287,11 @@ namespace Calculadora
         }
         private bool IsOperator(string PosOperador)
         {
-            if (PosOperador == "+" || PosOperador == "-" || PosOperador == "*" || PosOperador == "/")
+            if (PosOperador == "+" || PosOperador == "-" || PosOperador == "*" || PosOperador == "/" || PosOperador == "%")
             {
                 return true;
             }
-            return PosOperador == "+" || PosOperador == "-" || PosOperador == "*" || PosOperador == "/";
+            return PosOperador == "+" || PosOperador == "-" || PosOperador == "*" || PosOperador == "/" || PosOperador == "%";
         }
         private void HandleOperators(string value)
         {
@@ -283,7 +302,7 @@ namespace Calculadora
         }
         private bool ContainsOtherOperators(string screenContent)
         {
-            return screenContent.Contains("+") || screenContent.Contains("-") || screenContent.Contains("*") || screenContent.Contains("/");
+            return screenContent.Contains("+") || screenContent.Contains("-") || screenContent.Contains("*") || screenContent.Contains("/") || screenContent.Contains("%");
         }
         private string FindOperador(string screenContent)
         {
@@ -315,6 +334,9 @@ namespace Calculadora
                     case "/":
                         TxtBoxResul.Text = Div();
                         break;
+                    case "%":
+                        TxtBoxResul.Text = Porcent();
+                        break;
                 }
             }
         }
@@ -345,6 +367,13 @@ namespace Calculadora
             double.TryParse(numbers[0], out double n1);
             double.TryParse(numbers[1], out double n2);
             return Math.Round(n1 / n2, 12).ToString();
+        }
+        private string Porcent()
+        {
+            string[] numbers = TxtBoxResul.Text.Split("%");
+            double.TryParse(numbers[0], out double n1);
+            double.TryParse(numbers[1], out double n2);
+            return Math.Round(n1 % n2, 12).ToString();
         }
     }
 }
