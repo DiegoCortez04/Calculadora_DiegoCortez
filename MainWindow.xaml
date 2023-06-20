@@ -199,7 +199,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnBorrar" Content="C" HorizontalAlignment="Left" Height="60" Margin="89,77,0,0" VerticalAlignment="Top" Width="61" BorderBrush="#FF00FFF9" FontSize="36" FontFamily="Segoe UI Black" Click="BtnBorrar_Click">
+        <Button x:Name="BtnBorrar" Content="C" HorizontalAlignment="Left" Height="60" Margin="120,77,0,0" VerticalAlignment="Top" Width="96" BorderBrush="#FF00FFF9" FontSize="36" FontFamily="Segoe UI Black" Click="BtnBorrar_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF6B09E6"/>
@@ -207,15 +207,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnBorrarN" Content="🔙" HorizontalAlignment="Left" Height="60" Margin="22,77,0,0" VerticalAlignment="Top" Width="61" BorderBrush="#FF00FFF9" FontSize="36" FontFamily="Segoe UI Black" Click="BtnBorrarN_Click">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF6B09E6"/>
-                    <GradientStop Color="#FF00FFF9" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Button x:Name="BtnPorcent" Content="%" HorizontalAlignment="Left" Height="60" Margin="155,77,0,0" VerticalAlignment="Top" Width="61" BorderBrush="#FF00FFF9" FontSize="36" FontFamily="Segoe UI Black" Click="BtnPorcent_Click">
+        <Button x:Name="BtnBorrarN" Content="🔙" HorizontalAlignment="Left" Height="60" Margin="22,77,0,0" VerticalAlignment="Top" Width="93" BorderBrush="#FF00FFF9" FontSize="36" FontFamily="Segoe UI Black" Click="BtnBorrarN_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF6B09E6"/>
